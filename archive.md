@@ -11,7 +11,7 @@ title: Blog Archive
     {% assign month = post.date | date: "%B %Y" %}
     {% if month != current_month %}
       {% unless forloop.first %}</ul><hr><ul>{% endunless %}
-      <li><strong>{{ month }}</strong></li>
+      <!--<li><strong>{{ month }}</strong></li>-->
       {% assign current_month = month %}
     {% endif %}
     <li><a href="{{ post.url }}">{{ post.date | date: "%m-%d" }} : {{ post.title }}</a></li>
