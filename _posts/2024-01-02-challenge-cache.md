@@ -1,4 +1,4 @@
-![sfe](cache-ECS.png)
+![sfe](cache_ECS.png)
 第一部分：AWS 基础与身份管理
 
 AWS 区域、可用区与数据中心
