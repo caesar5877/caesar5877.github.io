@@ -87,3 +87,147 @@
 **总结的比喻：**
 
 编写合同测试就像是**餐厅（消费者）**向**食品供应商（提供者）**下达详细的订单。餐厅只在订单（pact 文件）中列出它做菜**必须**需要的食材（字段名称、数据类型和数量），而不需要知道供应商仓库里所有其他的存货。供应商收到订单后，会检查自己的库存（验证代码）和流程，确保他能够**完全满足**订单上列出的每一项要求，即使他实际生产的比订单要求的多。
+
+
+
+下面是你上传的两张图片内容的完整解析与结构化整理，我已将杂乱的截图内容转成清晰、可直接用于系统设计文档或面试讲解的结构化文本。
+
+⸻
+
+✅ 第一部分：管理验证状态流程（Verification Status Flow）解析
+
+系统需要处理以下几种验证状态：
+
+⸻
+
+1. VERIFIED（已验证）
+
+动作：
+	•	生成一次性令牌（OTT）
+	•	更新状态为 ISSUED
+	•	返回成功状态 SUCCESS_DVC_TRUST
+
+⸻
+
+2. DENIED（拒绝）
+
+动作：
+	•	设置为 DENIED 状态
+	•	记录验证失败
+
+⸻
+
+3. FAILED（失败）
+
+动作：
+	•	设置为 DENIED 状态
+	•	记录系统失败（例如内部错误）
+
+⸻
+
+4. EXPIRED（过期）
+
+动作：
+	•	检查令牌是否超时
+	•	更新为 EXPIRED 状态
+
+⸻
+
+5. PENDING（待处理）
+
+动作：
+	•	生成新的中继令牌（intermediate token）
+	•	设置重试等待时间
+	•	继续轮询（polling）
+
+⸻
+
+✅ 第二部分：handle() — 主处理方法解析
+
+handle() 方法的主要逻辑步骤如下：
+	1.	解密中继令牌
+	2.	验证中继令牌有效性
+	3.	从缓存或数据库获得验证详情
+	4.	从风险验证响应中解析验证状态
+	5.	检查令牌是否已过期
+	6.	根据验证状态处理：
+	•	VERIFIED → 生成 OTT，返回成功
+	•	DENIED / FAILED → 返回拒绝
+	•	EXPIRED → 返回过期
+	•	PENDING → 重新存储中继令牌，继续轮询
+	7.	调用风控逻辑（例如 RBA / RBAAD）
+	8.	发送审计事件
+
+⸻
+
+✅ 第三部分：关键配置解析
+
+通过 PollingServiceConfigProperties 配置的属性：
+	•	令牌过期时间
+	•	OTT 过期时间
+	•	首次轮询窗口
+	•	重试等待时间
+	•	风险验证开关
+	•	CIU（Customer Identity Update）发布开关
+
+该类方法 modifyDLResponse() 用于根据风险验证响应动态修改驾驶证（Driver License）验证状态。
+
+⸻
+
+✅ 第四部分：主要功能（Core Logic）解析
+
+⸻
+
+1. 获取风险验证响应
+
+从 challengeStatusDo 中读取：
+	•	riskVerificationResponse
+	•	verificationStatusResponse
+
+⸻
+
+2. 判断验证成功情况（VERIFY_SUCCESS）
+
+两种成功的来源：
+
+(A) SUCCESS_DVC_TRUST
+	•	当 IDVAAS 返回成功
+	•	且 CFM 返回 CompleteChallenge_AllowTxn
+	•	→ 设定为设备信任成功
+
+(B) SUCCESS
+	•	当 IDVAAS + CFM 都为 CompleteChallenge 类型
+	•	→ 设定为普通验证成功
+
+DENIED
+	•	其他情况均视为拒绝
+
+⸻
+
+3. 判断是否需要重新发起验证（VERIFY_RECHALLENGE）
+
+动作：
+	•	更新状态为 RE_CHALLENGED
+	•	更新下一步轮询时间
+	•	保存更新后的状态
+
+⸻
+
+4. 判断验证失败情况（VERIFY_FAILURE）
+
+动作：
+	•	设置验证失败
+	•	记录系统失败
+
+⸻
+
+🔥 第五部分：特殊处理
+
+针对某些特定的渠道（如 dLvcTrustExcludedChannels）：
+
+即使应该返回 SUCCESS_DVC_TRUST，也会统一降级为 SUCCESS。
+
+这是为了保持渠道之间的兼容性与一致行为。
+
+⸻
+
