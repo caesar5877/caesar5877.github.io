@@ -49,9 +49,9 @@ The project taught me the importance of designing architectures that are both fl
 I also learned how critical it is to strike the right balance between usability and security, especially in high-risk flows. Even without push notifications, the flow needed to feel seamless and intuitive to the customer while still meeting our security requirements. Mastering this balance was one of the most valuable takeaways from the project.
 
 ---
-问题： 你现在在 Work 工作在 Authentication Transaction Team 那你现在申请的岗位是做数字电子钱包的岗位 电子钱包的项目 而且你的岗位我也看到了 你正在申请更高一个级别的岗位 我想问一下 你如何认为你符合这个岗位的要求呢 我们为什么要给你一个高一级别的岗位呢 还有一个我看到你说你有 AWS 的经验 还有 AWS 的证书 我们 Team 也正在使用这个部分 我们 Team 的产品叫 sas 而你的产品叫 cas 你能告诉我一下 你是如何把你现在的工作和产品经验 迁移到我们 sas 项目上吗
+问题： 你现在在 Work 工作在cas 那你现在申请的岗位是做数字电子钱包的岗位 电子钱包的项目 而且你的岗位我也看到了 你正在申请更高一个级别的岗位 我想问一下 你如何认为你符合这个岗位的要求呢 我们为什么要给你一个高一级别的岗位呢 还有一个我看到你说你有 AWS 的经验 还有 AWS 的证书 我们 Team 也正在使用这个部分 我们 Team 的产品叫 sas 而你的产品叫 cas 你能告诉我一下 你是如何把你现在的工作和产品经验 迁移到我们 sas 项目上吗
 
-* 首先，我认为我之所以符合这个更高级别岗位的要求，是因为我在当前的 Challenge-as-a-Service 项目中积累了丰富的身份验证和高安全性交易的经验。我不仅设计了复杂的多端状态同步和验证流程，还在跨团队协作、风险控制以及用户体验优化方面有深入的实践。这些能力对于 sas 这样的数字钱包项目同样非常重要。
+* 首先，我认为我之所以符合这个更高级别岗位的要求，是因为我在当前的 cas 项目中积累了丰富的身份验证和高安全性交易的经验。我不仅设计了复杂的多端状态同步和验证流程，还在跨团队协作、风险控制以及用户体验优化方面有深入的实践。这些能力对于 sas 这样的数字钱包项目同样非常重要。
 * 其次，我有 AWS 的经验和认证，这意味着我可以迅速上手你们团队正在使用的云服务和基础设施。我能够将我在高安全性、可扩展性和云架构方面的经验直接应用到 sas 项目中，帮助提升系统的安全性和性能。
 * 最后，我已经在复杂的身份验证和高风险交易环境中证明了自己的能力，我相信这些经验能让我在新岗位上迅速上手并做出贡献。
 * 希望这些解释能让你们更清楚地看到我如何将现有的经验和能力转移到 sas 项目中，并在更高级别的岗位上为团队创造价值。
