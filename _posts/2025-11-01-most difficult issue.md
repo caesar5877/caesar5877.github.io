@@ -1,3 +1,39 @@
+from your perspective, what is the biggest opportunities and challenge for  team in the next year?
+thank you so much for your time, i really learn a lot from our conversation and it's very insightful for me regardless of the final decision.
+-----
+1strong fit for this more senior-level role because of the extensive experience I’ve gained on the cas team. 
+2worked deeply with authentication flows and high-security transactions
+3led complex multi-team integrations. 
+4These skills are directly transferable to the sas project in the digital wallet project. 
+5the same principles of ensuring secure, seamless user experience in high-stakes scenarios apply here.
+6 AWS experience and certifications mean quickly adapt to your cloud infrastructure. 
+7 comfortable leveraging cloud services to enhance both the security and scalability of the sas project.
+8 proven my ability to handle high-level responsibilities in complex, risk-sensitive env. 
+9 confident to bring experience to the sas team and contribute at a higher level, helping to drive both the product and the team forward
+---------
+1 looking for new challenges and opportunities to grow. I’ve gained experience in authentication and high-security transactions
+2 really excited about the prospect of applying these skills to a new domain like digital wallets and the sas project.
+3 really value the vision/ tech stack of your team
+4 great opportunity to bring my experience into a new context, learn more about digital payments, and continue growing in a slightly different field
+5 internal move would allow me to contribute my background to your team while also expanding my own skills and achieving mutual growth.
+---
+1 in terms of salary expectations, looking for sth that aligns with my level of experience and the responsibilities of the role. 
+2 the exact figure can be discussed based on the company’s compensation structure
+3 I hope for a fair and competitive salary that reflects my value and contributions.
+---
+1 even though “outstanding,” that doesn’t mean I’m not capable of taking on a more senior role. 2 In fact, I reliably met all the expected goals and delivered stable results. 
+3 I’m consistently dependable in project management and teamwork.
+4 As for why I step into a higher-level position, I’ve not only maintained steady performance, but I’ve also continuously improved my skills and taken on more complex responsibilities. 
+5  this consistent growth and reliability make me a strong candidate for a more senior role in your team.
+---
+1 enable secure identity verification for high-risk transactions like Zelle even when push notifications were turned off.
+2 let the browser initiate an In-App Challenge and ensure the mobile app could retrieve and complete that challenge without push. Everything had to stay in sync across the browser, the CaaS backend, the Auth database, and the mobile device.
+3 allowed the browser to set a flag in the Auth DB via the CaaS service, indicating a challenge was needed. The mobile app would then poll or use a session-based retrieval method to get the challenge. Once the user responded on the mobile side, the CaaS would handle the callback and let the browser continue the flow. I also coordinated closely with multiple teams—the mobile teams, the Secure Access team, and the Risk team—to ensure everyone was aligned on contracts, timing, and error handling.
+4 successfully deployed this solution, significantly increasing the coverage of In-App Challenges even when push was disabled. We maintained a smooth user experience and upheld security without increasing fraud risk, and the project was recognized as a key improvement by the product and risk teams.
+5 gained how to drive alignment in a complex env involving multiple teams and systems. Each team had its own priorities and constraints, and I learned how to communicate clearly, coordinate effectively, and keep everyone moving toward the same goal. This experience significantly strengthened my project leadership and execution skills.
+
+
+
  “非推送用户的 In-App Challenge（In-App Challenge with Push Disabled）是我做过最具挑战性的项目”
 当然，我来用 STAR 格式给你总结一下为什么这个项目对我来说是最具挑战性的。
 
